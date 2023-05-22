@@ -1,0 +1,198 @@
+:root {
+	--click-dark: #ac2121;
+	--pointer-dark: #f38674;
+}
+
+*{
+  cursor: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:focus{
+	outline: none;
+}
+
+.cursor {
+	pointer-events: none;
+	z-index: 9998;
+	top : 0;
+	left : 0;
+	display: block;
+	opacity: 1;
+
+	-webkit-transition: opacity 300ms linear;
+	-moz-transition: opacity 300ms linear;
+	-o-transition: opacity 300ms linear;
+	transition: opacity 300ms linear;
+	opacity: 0;
+
+	width: 6px;
+	height: 6px;
+}
+
+.cursor.moving {
+	opacity: 1;
+}
+
+.cursor::before {
+	content: ' ';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: var(--click-dark);
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+
+	opacity: 1;
+	-webkit-transition: opacity 300ms linear;
+	-moz-transition: opacity 300ms linear;
+	-o-transition: opacity 300ms linear;
+	transition: opacity 300ms linear;
+}
+
+
+.cursor.expand::before {
+	background: #363536;
+  box-shadow: 0 0 0 0 var(--click-dark);
+  animation: pulse-cursor 2s infinite;
+}
+
+@keyframes pulse-cursor {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(237, 232, 233, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(237, 232, 233, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(237, 232, 233, 0);
+  }
+}
+
+
+.node {
+	pointer-events: none;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	display: block;
+	opacity: 1;
+
+	-webkit-transition: opacity 300ms linear;
+	-moz-transition: opacity 300ms linear;
+	-o-transition: opacity 300ms linear;
+	transition: opacity 300ms linear;
+	opacity: 0;
+
+	width: 32px;
+	height: 32px;
+
+}
+
+.node.moving {
+	opacity: 1;
+}
+
+.node::before {
+	content: ' ';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: transparent;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	border: 1px solid var(--pointer-dark);
+	transform: scale(1.5);
+	opacity: 1;
+	-webkit-transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear;
+	-moz-transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear;
+	-o-transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear;
+	transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear;
+
+}
+
+.node.expand::before {
+	transform: scale(3);
+	opacity: 0.2;
+	background: linear-gradient(120deg, var(--click-dark), var(--pointer-dark), #E2E0E2, #626062, #363536);
+	mix-blend-mode: difference;
+	transition: 0.15s linear;
+	animation: blobRadius 5s ease infinite, blobBackground 15s ease infinite;
+}
+
+@keyframes blobRadius {
+	0%, 100% {
+		border-radius: 43% 77% 80% 40% / 40% 40% 80% 80%;
+	}
+	20% {
+		border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%;
+	}
+	40% {
+		border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%;
+	}
+	60% {
+		border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%;
+	}
+	80% {
+		border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%;
+	}
+}
+
+@keyframes blobBackground {
+	0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+.cursorClickEffect{
+	border-radius:50%;
+	animation:cursorClickEffect 0.5s ease-out;
+	z-index:9997;
+}
+
+@keyframes cursorClickEffect{
+	0%{
+		opacity:1;
+		width:0.5em; height:0.5em;
+		margin:-0.25em;
+		border-width:0.5rem;
+	}
+	100%{
+		opacity:0.2;
+		width:15em; height:15em;
+		margin:-7.5em;
+		border-width:0.03rem;
+	}
+}
+
+.nodeClickEffect{
+	animation:nodeClickEffect 0.5s ease-out;
+}
+
+@keyframes nodeClickEffect{
+	0%{
+		opacity:1;
+		transform: scale(1.5);
+	}
+	100%{
+		opacity:0.2;
+		transform: scale(1.5);
+	}
+}
