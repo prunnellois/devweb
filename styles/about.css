@@ -1,0 +1,93 @@
+/* M.Paget */
+html {
+    text-align: center;
+}
+
+h1 {
+    color: #070A52;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 100px;
+}
+
+h2 {
+    color: #FF6969;
+    font-size: 65px;
+    font-family: 'Lobster', cursive;
+    padding: 30px;
+    margin: 15px;
+}
+
+p {
+    font-size: 30px;
+    color: #070A52;
+    font-family: 'Poppins', sans-serif;
+    padding: 50px;
+    margin: 15px;
+}
+
+.nous {
+    padding: 50px;
+    margin: 30px;
+
+}
+
+.londres {
+    object-fit: cover;
+    border-radius: 5%;
+    height: 300px;
+    width: 500px;
+    box-shadow: 10px 10px 10px grey
+}
+
+.valeur {
+    background-size: cover;
+    border: solid 5px #070A52;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 30px;
+    box-shadow: 10px 10px 10px grey
+}
+
+.type {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    border: solid 5px #FF6969;
+    border-radius: 10px;
+    height: 600px;
+    width: 1000px;
+}
+
+.image {
+    object-fit: cover;
+    border-radius: 5%;
+    height: 400px;
+    width: 250px;
+}
+
+.restaurant {
+    height: 50px;
+    width: 100%;
+    padding: 50px;
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#texte-restaurant {
+    z-index: 10;
+    padding-left: 25rem;
+}
+
+.menu {
+    height: 1500px;
+    width: 85%;
+    padding: 50px;
+    margin: 30px;
+}

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+:root {
+	--light_mode_bg: #FAF5F6;
+	--light_mode_bgLight: #EDE8E9;
+	--light_mode_color: #6E696A;
+	--bs-font-sans-serif: 'Poppins Regular'
+}
+
+
+html{
+	text-align: justify;
+}
+
+body{
+	background-color: var(--light_mode_bg);
+	color: var(--light_mode_color);
+}
+
+
+/*--------------------------------------------------------------
+Navbar
+--------------------------------------------------------------*/
+
+.my-navbar {
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	top: 25px;
+	width: 95%;
+	left: 0;
+	right: 0;
+	padding: 0 25px;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 25px;
+	box-sizing: border-box;
+	transition: all 200ms ease-in-out;
+	z-index: 9997;
+}
+.my-navbar.fixed {
+	top: 20px;
+	padding: 10px 25px;
+	background-color: var(--light_mode_bgLight);
+	left: 24px;
+	right: 24px;
+	z-index: 9997;
+	font-size: 15px;
+	box-shadow: 0 4px 19px -2px rgba(0, 0, 0, 0.1);
+}
+#logo {
+	display: inline-flex;
+	align-items: center;
+}
+#logo img {
+	width: 85px;
+	transition: all 200ms ease-in-out;
+}
+.my-navbar.fixed #logo img {
+	width: 50px;
+}
+#site-navigation {
+	display: flex;
+	align-items: center;
+}
+ul#primary-menu {
+	margin-top: auto;
+	margin-bottom: auto;
+	display: flex;
+	padding: 0;
+	list-style: none;
+}
+ul#primary-menu>li {
+	margin: 0 10px;
+}
+
+ul#primary-menu>li>.btn>a {
+	margin: 0 10px;
+	color: var(--light_mode_color);
+	font-weight: 600;
+	text-decoration: none;
+	transition: 0.3s
+}
+
+
+/*--------------------------------------------------------------
+Main
+--------------------------------------------------------------*/
+
+#main-page {
+	margin-top: 7rem!important;
+	margin-bottom: 7rem!important;
+}
+
+.carousel .carousel-indicators button {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+}
+
+
+.bookTable {
+	background-image: url(../images/book.webp);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 25px;
+}
+
+.card-filter {
+	background-color: rgb(255 255 255 / 0.7);
+	backdrop-filter: blur(10px);
+}
+
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+
+.div-foot {
+	z-index: 1;
+	background: #5B49FF;
+	display: grid;
+	position: relative;
+	grid-area: footer;
+	min-height: 12rem;
+}
+
+.div-foot .bubbles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1rem;
+	background: #5B49FF;
+	filter: url("#blob");
+}
+
+.div-foot .bubbles .bubble {
+	position: absolute;
+	left: var(--position, 50%);
+	background:#5B49FF;
+	border-radius: 100%;
+	-webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+	animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+	transform: translate(-50%, 100%);
+}
+
+
+@-webkit-keyframes bubble-size {
+	0%, 75% {
+		width: var(--size, 4rem);
+		height: var(--size, 4rem);
+	}
+	100% {
+		width: 0rem;
+		height: 0rem;
+	}
+}
+
+@keyframes bubble-size {
+	0%, 75% {
+		width: var(--size, 4rem);
+		height: var(--size, 4rem);
+	}
+	100% {
+		width: 0rem;
+		height: 0rem;
+	}
+}
+@-webkit-keyframes bubble-move {
+	0% {
+		bottom: -4rem;
+	}
+	100% {
+		bottom: var(--distance, 10rem);
+	}
+}
+@keyframes bubble-move {
+	0% {
+		bottom: -4rem;
+	}
+	100% {
+		bottom: var(--distance, 10rem);
+	}
+}
+
+.footer-area {
+	z-index: 9997;
+	background-color: var(--light_mode_bgLight);
+	border-radius: 75px;
+	width: 95%;
+}
+
+
